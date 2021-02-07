@@ -2,6 +2,7 @@
 Tell the Chrome Dino to Jump
 <hr/>
 
-This is a re-creation of the classic Chrome Game where instead of the Spacebar, you yell "JUMP" for the Chrome Dino to jump. <br/>
+This is a re-creation of the classic Chrome Game with Javascript where instead of the Spacebar, you yell "JUMP" for the Chrome Dino to jump. <br/>
 <br/>
-It uses the Web Speech API (which in Chrome, is powered by the Google SPeech Libraries) to trigger jumps.
+It uses the Web Speech API (which in Chrome, is powered by the Google SPeech Libraries) to trigger jumps. <br/><br/><br/>
+![dinojump](https://user-images.githubusercontent.com/15321738/107145391-277d4080-6967-11eb-8b0a-2f18a49e4dae.PNG)
