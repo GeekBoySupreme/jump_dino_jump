@@ -122,7 +122,7 @@ function hideClass(name) {
   };
 
   Runner.keycodes = {
-    JUMP: { 38: 1, 32: 1 }, // Up, spacebar
+    JUMP: { 250: 1, 250: 1 }, // Up, spacebar
     DUCK: { 40: 1 }, // Down
     RESTART: { 13: 1 }, // Enter
   };

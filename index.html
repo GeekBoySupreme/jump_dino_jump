@@ -57,14 +57,47 @@
   </script>
 	  
 <script type="text/javascript">
-      document.addEventListener('keydown', function (event) {
-        console.log(event.which);
-      });
+      // document.addEventListener('keydown', function (event) {
+      //   console.log(event.which);
+      // });
 
-      setInterval(function () {
-        var evt = new KeyboardEvent('keydown', { 'keyCode': 38, 'which': 38 });
-        document.dispatchEvent(evt);
-      }, 500)
+      // setInterval(function () {
+      //   var evt = new KeyboardEvent('keydown', { 'keyCode': 250, 'which': 250 });
+      //   document.dispatchEvent(evt);
+      // }, 500);
+
+
+
+      var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+      var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
+      var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
+
+      
+      var recognition = new SpeechRecognition();
+
+      recognition.continuous = true;
+      recognition.lang = 'en-US';
+      recognition.interimResults = true;
+      //recognition.maxAlternatives = 1;
+
+  
+      recognition.start();
+
+
+      recognition.onresult = function (event) {
+          var color = event.results[0][0].transcript;
+          console.log(color);
+          console.log('Confidence: ' + event.results[0][0].confidence);
+
+          if(color.toLowerCase() == 'jump') {
+            var evt = new KeyboardEvent('keydown', { 'keyCode': 250, 'which': 250 });
+            document.dispatchEvent(evt);
+          }
+        }
+
+      recognition.onend = function(event) {
+        recognition.start();
+      }
 </script>
 
 
