@@ -553,6 +553,14 @@ function hideClass(name) {
 
         //console logging the high score
         console.log(this.highestScore);
+        var html =
+          '<div id="new_highscore">\
+    <span class="emoji"><img src="./emoji.svg" width="50px"/></span><span class="text">Yay! New Highscore</span><span class="score">' +
+          this.highestScore +
+          "</span>\
+    </div>";
+
+        document.getElementById("show_segment").innerHTML = html;
       }
 
       this.time = getTimeStamp();
