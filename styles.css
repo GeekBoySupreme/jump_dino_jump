@@ -588,7 +588,7 @@ html[subframe] body {
 }
 
 .start_off {
-  margin-top: 40px;
+  margin-top: 70px;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
@@ -599,5 +599,38 @@ body {
 }
 
 #show_speech {
-  font-size: 10px;
+  font-size: 12px;
+}
+
+#new_highscore {
+  font-family: "Courier Prime", monospace;
+
+  background-color: #ffffff;
+  color: #494949;
+  padding: 15px 5px;
+  font-size: 18px;
+  box-shadow: 0px 4px 60px rgba(208, 208, 208, 0.25);
+  margin: 10px;
+
+  width: 290px;
+  margin: 20px auto;
+  border-radius: 4px;
+
+  transition: all 0.2s ease;
+  animation: slideup 0.3s;
+}
+
+.score {
+  color: rgb(18, 98, 179);
+}
+
+@keyframes slideup {
+  0% {
+    position: relative;
+    top: 4px;
+  }
+  100% {
+    position: relative;
+    top: 0px;
+  }
 }
