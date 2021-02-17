@@ -64,16 +64,6 @@
   </script>
 	  
 <script type="text/javascript">
-      // document.addEventListener('keydown', function (event) {
-      //   console.log(event.which);
-      // });
-
-      // setInterval(function () {
-      //   var evt = new KeyboardEvent('keydown', { 'keyCode': 250, 'which': 250 });
-      //   document.dispatchEvent(evt);
-      // }, 500);
-
-
 
       var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
       var recognition = new SpeechRecognition();
@@ -88,11 +78,14 @@
 
 
       recognition.onresult = function (event) {
-          var phrase = event.results[0][0].transcript;
+	  var current = event.resultIndex;
+          var phrase = event.results[current][0].transcript;
           console.log(phrase);
-          console.log('Confidence: ' + event.results[0][0].confidence);
+          console.log('Confidence: ' + event.results[current][0].confidence);
 
-          var show_speech = "You said : "+ phrase +",   Confidence : "+ (((event.results[0][0].confidence)*100).toString()).substring(0,5) +"%";
+	  if(phrase.length > 100)
+		phrase = phrase.substring(0,100)+". . .";
+          var show_speech = "You said : "+ phrase +",   Confidence : "+ (((event.results[current][0].confidence)*100).toString()).substring(0,5) +"%";
           document.getElementById('show_speech').innerHTML = show_speech;
           setTimeout(function() {
             document.getElementById('show_speech').innerHTML = show_speech;
