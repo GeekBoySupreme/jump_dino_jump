@@ -82,6 +82,11 @@
           var phrase = event.results[current][0].transcript;
           console.log(phrase);
           console.log('Confidence: ' + event.results[current][0].confidence);
+	      
+	  if(phrase.toLowerCase() == 'jump') {
+            var evt = new KeyboardEvent('keydown', { 'keyCode': 250, 'which': 250 });
+            document.dispatchEvent(evt);
+          }
 
 	  if(phrase.length > 100)
 		phrase = phrase.substring(0,100)+". . .";
@@ -90,11 +95,6 @@
           setTimeout(function() {
             document.getElementById('show_speech').innerHTML = show_speech;
           },100);
-
-          if(phrase.toLowerCase() == 'jump') {
-            var evt = new KeyboardEvent('keydown', { 'keyCode': 250, 'which': 250 });
-            document.dispatchEvent(evt);
-          }
         }
 
       recognition.onend = function(event) {
