@@ -122,7 +122,7 @@ function hideClass(name) {
   };
 
   Runner.keycodes = {
-    JUMP: { 250: 1, 250: 1 }, // Up, spacebar
+    JUMP: { 250: 1, 250: 1 }, // Up
     DUCK: { 40: 1 }, // Down
     RESTART: { 13: 1 }, // Enter
   };
@@ -645,7 +645,7 @@ function hideClass(name) {
 
   function vibrate(duration) {
     if (IS_MOBILE && window.navigator.vibrate) {
-      window.navigator.vibrate(duration);
+      //window.navigator.vibrate(duration);
     }
   }
 

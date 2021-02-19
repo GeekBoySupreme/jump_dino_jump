@@ -78,23 +78,26 @@
 
 
       recognition.onresult = function (event) {
-	  var current = event.resultIndex;
-          var phrase = event.results[current][0].transcript;
-          console.log(phrase);
-          console.log('Confidence: ' + event.results[current][0].confidence);
-	      
-	  if(phrase.toLowerCase() == 'jump') {
-            var evt = new KeyboardEvent('keydown', { 'keyCode': 250, 'which': 250 });
-            document.dispatchEvent(evt);
-          }
+      var current = event.resultIndex;
+            var phrase = event.results[current][0].transcript;
+            console.log(phrase);
+            console.log('Confidence: ' + event.results[current][0].confidence);
+          
+      if((phrase.toLowerCase()).trim() == 'jump') {
+              var evt = new KeyboardEvent('keydown', { 'keyCode': 250, 'which': 250 });
+              document.dispatchEvent(evt);
+              console.log("Trigger");
+            }
 
-	  if(phrase.length > 100)
-		phrase = phrase.substring(0,100)+". . .";
-          var show_speech = "You said : "+ phrase +",   Confidence : "+ (((event.results[current][0].confidence)*100).toString()).substring(0,5) +"%";
-          document.getElementById('show_speech').innerHTML = show_speech;
-          setTimeout(function() {
-            document.getElementById('show_speech').innerHTML = show_speech;
-          },100);
+      if(phrase.length > 100)
+      phrase = phrase.substring(0,100)+". . .";
+            
+      var show_speech = "You said : "+ phrase +",   Confidence : "+ (((event.results[current][0].confidence)*100).toString()).substring(0,5) +"%";
+      document.getElementById('show_speech').innerHTML = show_speech;
+            
+        setTimeout(function() {
+              document.getElementById('show_speech').innerHTML = show_speech;
+            },100);
         }
 
       recognition.onend = function(event) {
