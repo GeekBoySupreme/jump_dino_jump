@@ -1,7 +1,7 @@
 <html>
 
 <head>
-<title>The Hills we Jump</title>
+<title>Dinojump</title>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 <link rel="stylesheet" href="./styles.css"/>
@@ -76,6 +76,9 @@
   
       recognition.start();
 
+      function phrase_check() {
+        
+      }
 
       recognition.onresult = function (event) {
       var current = event.resultIndex;
@@ -83,7 +86,7 @@
             console.log(phrase);
             console.log('Confidence: ' + event.results[current][0].confidence);
           
-      if((phrase.toLowerCase()).trim() == 'jump') {
+      if(phrase_check(phrase.toLowerCase()).trim())) {
               var evt = new KeyboardEvent('keydown', { 'keyCode': 250, 'which': 250 });
               document.dispatchEvent(evt);
               console.log("Trigger");

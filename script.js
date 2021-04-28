@@ -555,7 +555,7 @@ function hideClass(name) {
         console.log(this.highestScore);
         var html =
           '<div id="new_highscore">\
-    <span class="emoji"><img src="./emoji.svg" width="14px"/></span><span class="text"><b> Yay! New Highscore</b></span><span class="score"><b> : ' +
+    <span class="emoji"><img src="./emoji.svg" width="14px"/></span><span class="text"><b> New Highscore</b></span><span class="score"><b> : ' +
           this.highestScore +
           "</b></span>\
     </div>";
