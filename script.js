@@ -552,7 +552,7 @@ function hideClass(name) {
         this.distanceMeter.setHighScore(this.highestScore);
 
         //console logging the high score
-        console.log(this.highestScore);
+        //console.log(this.highestScore);
         var html =
           '<div id="new_highscore">\
     <span class="emoji"><img src="./emoji.svg" width="14px"/></span><span class="text"><b> New Highscore</b></span><span class="score"><b> : ' +
