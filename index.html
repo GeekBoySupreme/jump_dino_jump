@@ -76,8 +76,10 @@
   
       recognition.start();
 
-      function phrase_check() {
-        
+      function phrase_check(input) {
+        var flag = input.includes("jump");
+        console.log(flag);
+        return flag;
       }
 
       recognition.onresult = function (event) {
@@ -86,7 +88,7 @@
             console.log(phrase);
             console.log('Confidence: ' + event.results[current][0].confidence);
           
-      if(phrase_check(phrase.toLowerCase()).trim())) {
+      if(phrase_check(phrase.toLowerCase()).trim()) {
               var evt = new KeyboardEvent('keydown', { 'keyCode': 250, 'which': 250 });
               document.dispatchEvent(evt);
               console.log("Trigger");
